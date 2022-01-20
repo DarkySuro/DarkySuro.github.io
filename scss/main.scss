@@ -1,0 +1,173 @@
+@import "resets";
+@import "config";
+
+body {
+  background-color: $main-BG;
+  font-family: $font-family-stack;
+  width: 100%;
+  height: 100vh; //flex center to work
+  font-weight: map-get(
+    $weights,
+    light
+  ); // default font-weight set to light (300) @config
+  @include flexCenter(); //trying mixin :) @config
+
+  @include mobile {
+    padding: 24px;
+  }
+}
+
+.card {
+  max-width: 350px;
+  max-height: 600px;
+  width: 100%;
+  height: 100%;
+
+  padding: 25px;
+
+  background: $card-BG;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 24px;
+
+  .hero-img-container {
+    height: 300px;
+
+    border-radius: 8px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%); //horizontally & vertically center
+
+      z-index: 2; //at the top layer
+      visibility: hidden;
+
+      transition-delay: 0.1s; //it's looking good
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: rgba($Cyan, 0.5);
+
+      z-index: 1;
+
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover::after {
+      top: 0;
+    }
+
+    &:hover svg {
+      visibility: visible;
+    }
+  }
+
+  #hero-text {
+    color: $White;
+    font-size: 22px;
+    font-weight: map-get($weights, bold);
+
+    &:hover {
+      color: $Cyan;
+      cursor: pointer;
+    }
+  }
+
+  #description {
+    color: $Soft-blue;
+    font-size: 18px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .ethereum {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      color: $Cyan;
+      font-weight: map-get($weights, bold);
+    }
+
+    .time {
+      @extend .ethereum;
+
+      color: $Soft-blue;
+      font-weight: map-get($weights, regular);
+    }
+  }
+
+  .footer {
+    padding-top: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 16px;
+
+    border-top: 1px solid $line;
+
+    img {
+      width: 34px;
+      border: 1px solid $White;
+      border-radius: 50%;
+    }
+
+    span {
+      color: $Soft-blue;
+
+      .creator {
+        color: $White;
+
+        &:hover {
+          color: $Cyan;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  box-shadow: 0px 40px 20px 16px rgba($color: #000000, $alpha: 0.08),
+    0px 25px 20px 60px rgba($color: #000000, $alpha: 0.09);
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $White;
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: $Cyan;
+  }
+}

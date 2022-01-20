@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: #0d192b;
+  font-family: "Outfit", sans-serif;
+  width: 100%;
+  height: 100vh;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 24px;
+  }
+}
+
+.card {
+  max-width: 350px;
+  max-height: 600px;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  background: #14253d;
+  border-radius: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 24px;
+  -webkit-box-shadow: 0px 40px 20px 16px rgba(0, 0, 0, 0.08), 0px 25px 20px 60px rgba(0, 0, 0, 0.09);
+          box-shadow: 0px 40px 20px 16px rgba(0, 0, 0, 0.08), 0px 25px 20px 60px rgba(0, 0, 0, 0.09);
+}
+
+.card .hero-img-container {
+  height: 300px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card .hero-img-container img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card .hero-img-container svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  visibility: hidden;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.card .hero-img-container::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 247, 0.5);
+  z-index: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.card .hero-img-container:hover::after {
+  top: 0;
+}
+
+.card .hero-img-container:hover svg {
+  visibility: visible;
+}
+
+.card #hero-text {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card #hero-text:hover {
+  color: #00fff7;
+  cursor: pointer;
+}
+
+.card #description {
+  color: #8bacda;
+  font-size: 18px;
+}
+
+.card .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .content .ethereum, .card .content .time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  color: #00fff7;
+  font-weight: 600;
+}
+
+.card .content .time {
+  color: #8bacda;
+  font-weight: 400;
+}
+
+.card .footer {
+  padding-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: 16px;
+  border-top: 1px solid #2f415b;
+}
+
+.card .footer img {
+  width: 34px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.card .footer span {
+  color: #8bacda;
+}
+
+.card .footer span .creator {
+  color: white;
+}
+
+.card .footer span .creator:hover {
+  color: #00fff7;
+  cursor: pointer;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: white;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #00fff7;
+}
+/*# sourceMappingURL=main.css.map */

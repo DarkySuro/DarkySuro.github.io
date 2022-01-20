@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+// fonts
+
+$font-family-stack: "Outfit", sans-serif;
+$weights: ("light": 300, "regular": 400, "bold": 600);
+
+// Colors
+
+// Primary
+
+$Soft-blue: hsl(215, 51%, 70%);
+$Cyan: hsl(178, 100%, 50%);
+
+// Neutral
+
+$main-BG: hsl(217, 54%, 11%);
+$card-BG: hsl(216, 50%, 16%);
+$line: hsl(215, 32%, 27%);
+$White: hsl(0, 0%, 100%);
+
+// Responsibe
+
+$mobile: 375px;
+$desktop: 1440px;
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;  
+  }
+}
